@@ -1,0 +1,11 @@
+<nav>
+  <input type="text" data-role="search" placeholder="Search...">
+  <button data-role="submit"></button>
+</nav>
+
+
+<ul class="movies">
+  <% @movies.each do |movie| %>
+    <%= render partial: "movie", locals: {movie: movie} %>
+  <% end %>
+</ul>

@@ -1,0 +1,19 @@
+<div class="content">
+  <% if (!@movie['poster_path'] || @movie['poster_path'] == "null") %>
+    <img class="poster" src="http://via.placeholder.com/500x750">
+  <% else %>
+    <img class="poster" src="<%= "https://image.tmdb.org/t/p/w500#{@movie['poster_path']}" %>">
+  <% end %>
+
+  <div class="details">
+    <h1><%= @movie['title'] %></h1>
+    <h2><%= @movie['tagline'] %></h2>
+    <p><%= @movie['overview'] %></p>
+  </div>
+
+  <% if (@movie['backdrop_path'] && @movie['backdrop_path'] != "null") %>
+    <img class="backdrop" src="<%= "https://image.tmdb.org/t/p/w500#{@movie['backdrop_path']}" %>">
+  <% end %>
+</div>
+
+<%= link_to "Back to search", :back, class: "back-link" %>
